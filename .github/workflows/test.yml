@@ -1,0 +1,14 @@
+name: "Test All Assertions"
+
+on:
+  push:
+    branches:
+      - "**"
+
+jobs:
+  test-all:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: npm install --workspaces
+      - run: npm run test --workspaces
