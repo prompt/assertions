@@ -2,6 +2,8 @@
   "name": "@assertions/foundation",
   "workspaces": [
     "**",
-    "!.github"
+    "!.github",
+    "!node_modules",
+    "!.git"
   ]
 }
