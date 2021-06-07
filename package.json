@@ -1,0 +1,7 @@
+{
+  "name": "@assertions/foundation",
+  "workspaces": [
+    "**",
+    "!.github"
+  ]
+}
