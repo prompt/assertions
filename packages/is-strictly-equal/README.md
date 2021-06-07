@@ -1,4 +1,4 @@
-# Is Equal?
+# Assert Strictly Equal
 
 Assert that `actual` is equal to `expected` in both type and value.
 

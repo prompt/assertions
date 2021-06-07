@@ -1,4 +1,4 @@
-const isEqual: any = require('../src/is-equal')
+const isEqual: any = require('../src/is-strictly-equal')
 
 describe('equality assertion', () => {
   it('matches two equal strings', () => {

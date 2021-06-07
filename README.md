@@ -4,7 +4,7 @@ A collection of assertions for [Assert][pr-mpt/actions-assert].
 
 | Name | Description | Reference |
 | ---- | ----------- | ------- |
-| is-equal | Assert strict equality | [`npm://@assertions/is-equal`][@assertions/is-equal] |
+| is-strictly-equal | Assert strict equality | [`npm://@assertions/is-strictly-equal`][@assertions/is-strictly-equal] |
 
 [pr-mpt/actions-assert]: https://github.com/pr-mpt/actions-assert
-[@assertions/is-equal]: https://www.npmjs.com/package/@assertions/is-equal
+[@assertions/is-strictly-equal]: https://www.npmjs.com/package/@assertions/is-equal
