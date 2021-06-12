@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ls -a -R
+      - run: npm run build -w packages/directory-exists
       - uses: pr-mpt/actions-assert@v2.0.0-alpha
         with:
           assertion: "${{ format(env.package, 'directory-exists') }}"
