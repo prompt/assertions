@@ -6,7 +6,7 @@ on:
       - "**"
 
 jobs:
-  test-all-assertions:
+  unit-test-all:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -15,3 +15,11 @@ jobs:
           node-version: 16
       - run: npm install
       - run: npm run test --workspaces
+  test-directory-exists:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./
+        with:
+          assertion: "./../../packages/directory-exists"
+          expected: "packages"
