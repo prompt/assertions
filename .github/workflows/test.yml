@@ -6,7 +6,7 @@ on:
       - "**"
 
 env:
-  package: "workflows://../../../packages/{0}/dist/index"
+  package: "local://packages/{0}/dist/index"
 
 jobs:
   unit-test-all:
