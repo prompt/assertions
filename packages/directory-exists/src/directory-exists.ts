@@ -6,26 +6,26 @@ interface Result {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function directoryExists(expected: any, _: any): Result {
-  if (!existsSync(expected)) {
+function directoryExists(_: any, actual: any): Result {
+  if (!existsSync(actual)) {
     return {
       pass: false,
-      message: `path ${expected} does not exist`
+      message: `path [${actual}] does not exist`
     }
   }
 
-  const path: Stats = lstatSync(expected)
+  const path: Stats = lstatSync(actual)
 
   if (!path.isDirectory()) {
     return {
       pass: false,
-      message: `path ${expected} exists but is not a directory`
+      message: `path [${actual}] exists but is not a directory`
     }
   }
 
   return {
     pass: true,
-    message: `directory ${expected} found`
+    message: `directory [${actual}] found`
   }
 }
 
