@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: ./
+      - uses: pr-mpt/actions-assert@v1
         with:
-          assertion: "./../../packages/directory-exists"
+          assertion: "workflows://./../../packages/directory-exists"
           expected: "packages"
