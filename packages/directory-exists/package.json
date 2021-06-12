@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "compile": "tsc",
-    "package": "ncc build lib/starts-with.js --source-map --license licenses.txt",
+    "package": "ncc build lib/directory-exists.js --source-map --license licenses.txt",
     "build": "npm run compile && npm run package",
     "test": "jest",
     "all": "npm run build && npm test"
