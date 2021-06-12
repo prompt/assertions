@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: pr-mpt/actions-assert@v1
+      - uses: pr-mpt/actions-assert@v2.0.0-alpha
         with:
           assertion: "${{ format(env.package, 'directory-exists') }}"
           expected: "packages"
