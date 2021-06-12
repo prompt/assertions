@@ -26,10 +26,12 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: ${{ env.node }}
-      - run: |
+      - name: Build directory-exists assertion
+        run: |
           npm install
           npm run build --workspace=packages/directory-exists
-      - uses: pr-mpt/actions-assert@v2.0.0-alpha
+      - name: Test .github directory exists
+        uses: pr-mpt/actions-assert@v2.0.0-alpha
         with:
           assertion: "${{ format(env.package, 'directory-exists') }}"
-          expected: "packages"
+          actual: ".github"
