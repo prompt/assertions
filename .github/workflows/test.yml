@@ -6,7 +6,6 @@ on:
       - "**"
 
 env:
-  package: "local://packages/{0}/dist/index"
   node: 16
 
 jobs:
@@ -21,6 +20,8 @@ jobs:
       - run: npm run test --workspaces
   test-directory-exists:
     runs-on: ubuntu-latest
+    env:
+      workspace: packages/directory-exists
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
@@ -29,9 +30,9 @@ jobs:
       - name: Build directory-exists assertion
         run: |
           npm install
-          npm run build --workspace=packages/directory-exists
+          npm run build --workspace=${{ env.workspace }}
       - name: Test .github directory exists
         uses: pr-mpt/actions-assert@v2.0.0-alpha
         with:
-          assertion: "${{ format(env.package, 'directory-exists') }}"
+          assertion: "local://packages/directory-exists/dist/index"
           actual: ".github"
