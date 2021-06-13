@@ -1,7 +1,6 @@
 {
   "name": "@assertions/is-strictly-equal",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "files": [
     "dist/**/*"
