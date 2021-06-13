@@ -1,17 +1,38 @@
-name: "Test All Assertions"
+name: "Test Assertions"
 
 on:
   push:
     branches:
       - "**"
 
+env:
+  node: 16
+
 jobs:
-  test-all-assertions:
+  unit-test-all:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: 16
+          node-version: ${{ env.node }}
       - run: npm install
       - run: npm run test --workspaces
+  directory-exists:
+    runs-on: ubuntu-latest
+    env:
+      workspace: packages/directory-exists
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.node }}
+      - name: Build directory-exists assertion
+        run: |
+          npm install
+          npm run build --workspace=${{ env.workspace }}
+      - name: Test .github directory exists
+        uses: pr-mpt/actions-assert@v2.0.0-alpha
+        with:
+          assertion: "local://packages/directory-exists/dist/index"
+          actual: ".github"
