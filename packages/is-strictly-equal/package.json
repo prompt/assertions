@@ -9,6 +9,7 @@
   "author": "Samuel Ryan <sam@samryan.co.uk>",
   "license": "MIT",
   "keywords": [
+    "actions-assert",
     "github-actions",
     "assertions",
     "assert"
