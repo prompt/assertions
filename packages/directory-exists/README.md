@@ -1,7 +1,14 @@
 # Assert Directory Exists
 
-Assert that `actual` is a directory. Paths are relative to the
-[GitHub Workspace][github/workspace] unless `actual` is an absolute path.
+Assert that `expected` is a directory. Paths are relative to the
+[GitHub Workspace][github/workspace] unless `expected` is an absolute path.
+
+```yaml
+- uses: pr-mpt/actions-assert@v2
+  with:
+    assertion: npm://@assertions/directory-exists
+    expected: "path/to/directory"
+```
 
 Part of the [assertions][@assertions] foundation collection.
 

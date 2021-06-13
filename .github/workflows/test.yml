@@ -32,7 +32,7 @@ jobs:
           npm install
           npm run build --workspace=${{ env.workspace }}
       - name: Test .github directory exists
-        uses: pr-mpt/actions-assert@v2.0.0-alpha
+        uses: pr-mpt/actions-assert@v2
         with:
           assertion: "local://packages/directory-exists/dist/index"
-          actual: ".github"
+          expected: ".github"
