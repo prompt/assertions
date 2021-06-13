@@ -1,4 +1,4 @@
-name: "Test All Assertions"
+name: "Test Assertions"
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
           node-version: ${{ env.node }}
       - run: npm install
       - run: npm run test --workspaces
-  test-directory-exists:
+  directory-exists:
     runs-on: ubuntu-latest
     env:
       workspace: packages/directory-exists
