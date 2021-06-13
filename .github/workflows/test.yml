@@ -35,4 +35,4 @@ jobs:
         uses: pr-mpt/actions-assert@v2
         with:
           assertion: "local://packages/directory-exists/dist/index"
-          actual: ".github"
+          expected: ".github"
