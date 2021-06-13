@@ -7,7 +7,7 @@ interface Result {
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function directoryExists(expected: any, actual: any): Result {
-  if (actual != null) {
+  if (!!actual) {
     throw new RangeError('directoryExists accepts `expected` not `actual`')
   }
 
