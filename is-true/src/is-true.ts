@@ -7,6 +7,7 @@ const trueValues: string[] = ['true', 'True', 'TRUE']
 
 function isTrue(expected: unknown, actual: unknown): Result {
   if (expected !== null) {
+    console.log(typeof expected, typeof actual, expected, actual);
     throw new RangeError(
       '`expected` is not accepted as it is always implicitly `true` for this assertion'
     )
