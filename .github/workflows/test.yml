@@ -32,9 +32,8 @@ jobs:
         run: |
           npm install
           npm run build --workspace=${{ env.workspace }}
-      - run: echo {{ format(env.source, 'directory-exists') }}
       - name: Test .github directory exists
         uses: pr-mpt/actions-assert@v2
         with:
-          assertion: "{{ format(env.source, 'directory-exists') }}"
+          assertion: "${{ format(env.source, 'directory-exists') }}"
           expected: ".github"
