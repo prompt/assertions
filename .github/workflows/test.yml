@@ -19,7 +19,7 @@ jobs:
           node-version: ${{ env.node }}
       - run: npm install
       - run: npm run test --workspaces
-  directory-exists:
+  assertions-directory-exists:
     runs-on: ubuntu-latest
     env:
       workspace: "@assertions/directory-exists"
@@ -33,7 +33,48 @@ jobs:
           npm install
           npm run build --workspace=${{ env.workspace }}
       - name: Test .github directory exists
-        uses: pr-mpt/actions-assert@v2
+        uses: pr-mpt/actions-assert@v3
         with:
           assertion: "${{ format(env.source, 'directory-exists') }}"
           expected: ".github"
+  assertions-is-true:
+    runs-on: ubuntu-latest
+    env:
+      workspace: "@assertions/is-true"
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.node }}
+      - name: Build is-true assertion
+        run: |
+          npm install
+          npm run build --workspace=${{ env.workspace }}
+      - name: Test true is true
+        uses: pr-mpt/actions-assert@v3
+        with:
+          assertion: "${{ format(env.source, 'is-true') }}"
+          actual: "true"
+      - name: Test true is true
+        uses: pr-mpt/actions-assert@v3
+        with:
+          assertion: "${{ format(env.source, 'is-true') }}"
+          actual: "true"
+      - name: Test TRUE is true
+        uses: pr-mpt/actions-assert@v3
+        with:
+          assertion: "${{ format(env.source, 'is-true') }}"
+          actual: "TRUE"
+      - name: Test false is not true
+        id: "not-true"
+        uses: pr-mpt/actions-assert@v3
+        with:
+          assertion: "${{ format(env.source, 'is-true') }}"
+          actual: "false"
+          error-on-fail: false
+      - name: Assert false did not pass true test
+        uses: pr-mpt/actions-assert@v3
+        with:
+          assertion: "npm://@assertions/is-equal:v1"
+          expected: "false"
+          actual: "${{ steps.not-true.outputs.passed }}"
