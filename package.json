@@ -2,7 +2,9 @@
   "name": "@assertions/foundation",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "!node_modules",
+    "!.github",
+    "*"
   ],
   "scripts": {
     "format": "prettier --write **/*.ts",
