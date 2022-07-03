@@ -31,7 +31,7 @@ Part of the [assertions][@assertions] foundation collection.
   uses: pr-mpt/actions-assert@v3
   with:
     assertion: npm://@assertions/equivalent-html
-    actual: '${{ steps.request.outputs.response }}'
+    actual: '${{ fromJSON(steps.request.outputs.response) }}'
     expected: '${{ steps.fixture.outputs.content }}'
 ```
 
