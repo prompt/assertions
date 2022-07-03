@@ -2,13 +2,14 @@
 
 A collection of assertions for [Assert][pr-mpt/actions-assert].
 
-| Reference | Description |
-| :-------- | :---------- |
-| [`npm://@assertions/is-strictly-equal`][@assertions/is-strictly-equal] | `actual` is the same value and type as `expected` |
-| [`npm://@assertions/is-equal`][@assertions/is-equal] | `actual` has the same value as `expected` |
-| [`npm://@assertions/is-true`][@assertions/is-true] | `actual` is a string equivalent to YAML Boolean true |
-| [`npm://@assertions/starts-with`][@assertions/starts-with] | `actual` starts with `expected` |
-| [`npm://@assertions/directory-exists`][@assertions/directory-exists] | path `expected` exists and is a directory |
+| Reference                                                              | Description                                          |
+| :--------------------------------------------------------------------- | :--------------------------------------------------- |
+| [`npm://@assertions/is-strictly-equal`][@assertions/is-strictly-equal] | `actual` is the same value and type as `expected`    |
+| [`npm://@assertions/is-equal`][@assertions/is-equal]                   | `actual` has the same value as `expected`            |
+| [`npm://@assertions/is-true`][@assertions/is-true]                     | `actual` is a string equivalent to YAML Boolean true |
+| [`npm://@assertions/starts-with`][@assertions/starts-with]             | `actual` starts with `expected`                      |
+| [`npm://@assertions/directory-exists`][@assertions/directory-exists]   | path `expected` exists and is a directory            |
+| [`npm://@assertions/equivalent-html`][@assertions/equivalent-html]     | `actual` HTML is equivalent to `expected` HTML       |
 
 ## Monorepo using npm Workspaces
 
