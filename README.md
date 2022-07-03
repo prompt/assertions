@@ -30,4 +30,5 @@ dev:~$ npm run test --workspaces
 [@assertions/is-true]: https://www.npmjs.com/package/@assertions/is-true
 [@assertions/starts-with]: https://www.npmjs.com/package/@assertions/starts-with
 [@assertions/directory-exists]: https://www.npmjs.com/package/@assertions/directory-exists
+[@assertions/equivalent-html]: https://www.npmjs.com/package/@assertions/equivalent-html
 [npm/workspaces]: https://docs.npmjs.com/cli/v7/using-npm/workspaces
